@@ -18,11 +18,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvPercent"
+        android:id="@+id/tvSeekbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        tools:text="@string/percent"
+        tools:text="@string/seekbar"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/tvBase"
@@ -35,8 +35,8 @@
         android:layout_marginTop="48dp"
         android:text="@string/tip"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvPercent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPercent" />
+        app:layout_constraintEnd_toEndOf="@+id/tvSeekbar"
+        app:layout_constraintTop_toBottomOf="@+id/tvSeekbar" />
 
     <TextView
         android:id="@+id/tvTotal"
@@ -66,9 +66,9 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:max="30"
-        app:layout_constraintBottom_toBottomOf="@+id/tvPercent"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSeekbar"
         app:layout_constraintStart_toStartOf="@+id/etBaseAmount"
-        app:layout_constraintTop_toTopOf="@+id/tvPercent" />
+        app:layout_constraintTop_toTopOf="@+id/tvSeekbar" />
 
     <TextView
         android:id="@+id/tvTipAmount"
