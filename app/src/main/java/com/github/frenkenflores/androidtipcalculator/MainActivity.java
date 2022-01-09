@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private SeekBar seekbar;
     private TextView tvTipAmount;
     private TextView tvTotalAmount;
+    private TextView tvStatus;
 
     private static final String TAG = "MainActivity";
 
@@ -37,8 +38,10 @@ public class MainActivity extends AppCompatActivity {
         seekbar = (SeekBar) findViewById(R.id.seekBar);
         tvTipAmount = (TextView) findViewById(R.id.tvTipAmount);
         tvTotalAmount = (TextView) findViewById(R.id.tvTotalAmount);
+        tvStatus = (TextView) findViewById(R.id.tvStatus);
 
         int initProgress = 15;
+        printProgress(initProgress);
         seekbar.setProgress(initProgress);
         tvSeekbar.setText(initProgress + "%");
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, "onProgressChange: " + i);
                 tvSeekbar.setText(i + "%");
                 compute();
+                printProgress(i);
             }
 
             @Override
@@ -84,5 +88,13 @@ public class MainActivity extends AppCompatActivity {
         tvTipAmount.setText(tipAmount + " $");
         tvTotalAmount.setText(totalAmount + " $");
     }
-
+    private void printProgress(int progress) {
+        if (progress < 10) {
+            tvStatus.setText("\uD83D\uDE15");
+        } else if (progress >= 10 && progress < 20) {
+            tvStatus.setText("\uD83D\uDE10");
+        } else {
+            tvStatus.setText("\uD83D\uDE0B");
+        }
+    }
 }
